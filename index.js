@@ -3,11 +3,13 @@ var app = express();
 var port = 4000;
 
 app.get("/", (req, res) => {
-    res.send({
-        id: "001",
-        name: "thana",
-        status: "200"
-    });
+    res.send(
+        {
+            id: "001",
+            name: "thana",
+            status: "200"
+        }
+    );
 });
 
 app.listen(port, () => {

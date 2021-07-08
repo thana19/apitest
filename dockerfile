@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /use/app
+WORKDIR /app
 
 #Entry Point
 
