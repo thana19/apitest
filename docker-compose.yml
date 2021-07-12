@@ -1,8 +1,16 @@
-version: '3.8'
+version: '3'
+
 services: 
     web:
-        build: 
-            context: ./
-        command: npm start
+        container_name: apitest
+        restart:  always
+        build: .
         ports: 
-            - "4000:4000"
+            - "5000:3000"
+        links: 
+            - mongo
+    mongo:
+        container_name: mymongo
+        image: mongo
+        ports: 
+            - "27018:27017"

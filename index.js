@@ -1,17 +1,13 @@
-var express = require("express");
-var app = express();
-var port = 4000;
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-    res.send(
-        {
-            id: "001",
-            name: "thana",
-            status: "200"
-        }
-    );
-});
+require('./database');
 
-app.listen(port, () => {
-    console.log('server listening on port ${port}');
-});
+app.get('/', (req, res) => {
+    res.json({ message: 'Hello API Test' })
+  })
+
+  app.listen(port, () => {
+    console.log(`Server listening on the port  ${port}`);
+  })
